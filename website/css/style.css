@@ -1,0 +1,17 @@
+.jumbotron {
+    background-color: #84d669;
+    text-align: center;
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+.footer-main-div {
+    text-align: center;
+}
+
+#submit-btn{
+    margin: auto;
+}

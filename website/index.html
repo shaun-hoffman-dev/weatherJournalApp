@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>My Weather Journal</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="">
+        <header class = "jumbotron">
+            <h1 class="display-4">Weather App</h1>
+        </header>
+        <main class="container">
+            <div>
+            <div>
+                <h2>Make Your Journal Entry</h2>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3 col-lg-4">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Enter Your Zipcode:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Zip Code" aria-label="zipCode" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3 col-lg-8">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">How Are You Feeling Today?</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="I'm feeling..." aria-label="feeling" aria-describedby="basic-addon1">
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg" id="submit-btn">Submit Journal Entry</button>
+            <hr>
+            </div>
+            
+            <div class="container">
+                <div class="card">
+                    forecast goes here once entered- hide this.
+                    this will be a big card.
+                    <hr>
+                </div>
+            </div>
+
+            <div class="container">
+               <div class="card rounded-50 col-lg-4">
+                    stuff here
+               </div>
+               <div class="card rounded-50 col-lg-4">
+                    stuff here 2
+                </div>
+            </div>
+
+            
+
+        </main>
+        <footer class="footer mt-auto py-3">
+            <div class="container footer-main-div">
+                <p>©<span id="dynamicYear"></span> SJH</p>
+            </div>
+        </footer>
+        <script src="js/app.js"></script>
+    </body>
+</html>
