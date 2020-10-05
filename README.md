@@ -17,4 +17,7 @@ Date:
 2020-10-03
 
 Things to Know:
-Requires spinning up local server to run Node/Express server-side piece
+* Requires spinning up local server to run Node/Express server-side piece
+* Currently limited to US Zip Code entry only
+* Currently limited to displaying Farenheit temperatures only
+

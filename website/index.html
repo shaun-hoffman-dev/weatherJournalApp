@@ -5,54 +5,225 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>My Weather Journal</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/391c124573.js" crossorigin="anonymous"></script>
     </head>
     <body class="">
         <header class = "jumbotron">
-            <h1 class="display-4">Weather App</h1>
+            <i class="fas fa-cloud-sun-rain"></i>
+            <h1 class="display-4">Weather<span id="journal">Journal</span></h1>
         </header>
         <main class="container">
+            <!-- Journal Entry Section -->
             <div>
-            <div>
-                <h2>Make Your Journal Entry</h2>
-            </div>
-            <div class="row">
-                <div class="input-group mb-3 col-lg-4">
-                    <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Enter Your Zipcode:</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Zip Code" aria-label="zipCode" aria-describedby="basic-addon1">
+                <div>
+                    <h2>Make An Entry</h2>
                 </div>
-                <div class="input-group mb-3 col-lg-8">
-                    <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">How Are You Feeling Today?</span>
+                <div class="row">
+                    <div class="input-group mb-3 col-lg-4">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Enter Your Zipcode:</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Zip Code" aria-label="zipCode" aria-describedby="basic-addon1" id="locationField">
                     </div>
-                    <input type="text" class="form-control" placeholder="I'm feeling..." aria-label="feeling" aria-describedby="basic-addon1">
+                    <div class="input-group mb-3 col-lg-8">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">How Are You Today?</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="I'm feeling..." aria-label="feeling" aria-describedby="basic-addon1" id="feelingField">
+                    </div>
                 </div>
-            </div>
 
-            <button type="button" class="btn btn-primary btn-lg" id="submit-btn">Submit Journal Entry</button>
-            <hr>
+                <button type="button" class="btn btn-primary btn-lg" id="submit-btn">Submit Journal Entry</button>
+                <hr>
             </div>
             
+            <!-- Latest Entry.  [Hidden until user clicks submit button] -->
             <div class="container">
+                <h2>Latest Conditions</h2>
                 <div class="card">
-                    forecast goes here once entered- hide this.
-                    this will be a big card.
-                    <hr>
+                    <h3 id="cityCountry">Ames, US</h3>
+                    <h4 id="dateTime">10/4/2020   7:30 PM</h4>
+                    <div class = "row align-items-center">
+                        <div class="col align-self-center">
+                            <img src="http://openweathermap.org/img/wn/01n@4x.png">
+                        </div>
+                        <div class="col">
+                            <!-- <p id="temperatureLine"><b>Temperature:</b> 50 F</p>
+                            <p id="conditionsLine">Conditions:  Clear Sky</p>
+                            <p id="windLine">Wind Speed:  5.8 mph</p>
+                            <p id="moodLine">Your Mood:   Meh</p> -->
+                            <table>
+                                <tr>
+                                    <td class="table-category"><b>Temperature</b></td>
+                                    <td>50 F</td>
+                                </tr>
+                                <tr>
+                                    <td class="table-category"><b>Conditions</b></td>
+                                    <td>Clear Sky</td>
+                                </tr>
+                                <tr>
+                                    <td class="table-category"><b>Wind Speed</b></td>
+                                    <td>5.8mph</td>
+                                </tr>
+                                <tr>
+                                    <td class="table-category"><b>Mood</b></td>
+                                    <td>Meh</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
+                <hr>
             </div>
-
-            <div class="container">
-               <div class="card rounded-50 col-lg-4">
-                    stuff here
-               </div>
-               <div class="card rounded-50 col-lg-4">
-                    stuff here 2
-                </div>
-            </div>
-
             
+            <!-- Archived Entries Starting With The Most Recent -->
+            <div class="container">
+                <h2>Prior Entries</h2>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card rounded-50 gallery-card">
+                            <h4 id="cityCountry">Ames, US</h4>
+                            <h5 id="dateTime">10/4/2020   7:30 PM</h5>
+                            <div class = "row align-items-center">
+                                <div class="col-3 align-self-center">
+                                    <img src="http://openweathermap.org/img/wn/01n@2x.png">
+                                </div>
+                                <div class="col-3">
+                                    <!-- <p id="temperatureLine"><b>Temperature:</b> 50 F</p>
+                                    <p id="conditionsLine">Conditions:  Clear Sky</p>
+                                    <p id="windLine">Wind Speed:  5.8 mph</p>
+                                    <p id="moodLine">Your Mood:   Meh</p> -->
+                                    <table class="gallery-card-table">
+                                        <tr>
+                                            <td class="table-category"><b>Temperature</b></td>
+                                            <td>50 F</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Conditions</b></td>
+                                            <td>Clear Sky</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Wind Speed</b></td>
+                                            <td>5.8mph</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Mood</b></td>
+                                            <td>Meh</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card rounded-50 gallery-card">
+                            <h4 id="cityCountry">Ames, US</h4>
+                            <h5 id="dateTime">10/4/2020   7:30 PM</h5>
+                            <div class = "row align-items-center">
+                                <div class="col-3 align-self-center">
+                                    <img src="http://openweathermap.org/img/wn/01n@2x.png">
+                                </div>
+                                <div class="col-3">
+                                    <!-- <p id="temperatureLine"><b>Temperature:</b> 50 F</p>
+                                    <p id="conditionsLine">Conditions:  Clear Sky</p>
+                                    <p id="windLine">Wind Speed:  5.8 mph</p>
+                                    <p id="moodLine">Your Mood:   Meh</p> -->
+                                    <table class="gallery-card-table">
+                                        <tr>
+                                            <td class="table-category"><b>Temperature</b></td>
+                                            <td>50 F</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Conditions</b></td>
+                                            <td>Clear Sky</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Wind Speed</b></td>
+                                            <td>5.8mph</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Mood</b></td>
+                                            <td>Meh</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card rounded-50 gallery-card">
+                            <h4 id="cityCountry">Ames, US</h4>
+                            <h5 id="dateTime">10/4/2020   7:30 PM</h5>
+                            <div class = "row align-items-center">
+                                <div class="col-3 align-self-center">
+                                    <img src="http://openweathermap.org/img/wn/01n@2x.png">
+                                </div>
+                                <div class="col-3">
+                                    <!-- <p id="temperatureLine"><b>Temperature:</b> 50 F</p>
+                                    <p id="conditionsLine">Conditions:  Clear Sky</p>
+                                    <p id="windLine">Wind Speed:  5.8 mph</p>
+                                    <p id="moodLine">Your Mood:   Meh</p> -->
+                                    <table class="gallery-card-table">
+                                        <tr>
+                                            <td class="table-category"><b>Temperature</b></td>
+                                            <td>50 F</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Conditions</b></td>
+                                            <td>Clear Sky</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Wind Speed</b></td>
+                                            <td>5.8mph</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Mood</b></td>
+                                            <td>Meh</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card rounded-50 gallery-card">
+                            <h4 id="cityCountry">Ames, US</h4>
+                            <h5 id="dateTime">10/4/2020   7:30 PM</h5>
+                            <div class = "row align-items-center">
+                                <div class="col-2 align-self-center">
+                                    <img src="http://openweathermap.org/img/wn/01n@2x.png">
+                                </div>
+                                <div class="col-4">
+                                    <!-- <p id="temperatureLine"><b>Temperature:</b> 50 F</p>
+                                    <p id="conditionsLine">Conditions:  Clear Sky</p>
+                                    <p id="windLine">Wind Speed:  5.8 mph</p>
+                                    <p id="moodLine">Your Mood:   Meh</p> -->
+                                    <table class="gallery-card-table">
+                                        <tr>
+                                            <td class="table-category"><b>Temperature</b></td>
+                                            <td>50 F</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Conditions</b></td>
+                                            <td>Clear Sky</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Wind Speed</b></td>
+                                            <td>5.8mph</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-category"><b>Mood</b></td>
+                                            <td>Meh</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </main>
         <footer class="footer mt-auto py-3">
