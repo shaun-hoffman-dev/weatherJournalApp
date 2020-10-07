@@ -17,26 +17,34 @@ const port = 8000;
 const server = app.listen(port, ()=>{console.log(`running on localhost: ${port}`)});
 
 //ROUTING
-    // GET route
+    // GET CURRENT STATUS SAVED AS OBJECT
     app.get('/all', sendData);
-
-    function sendData (request, response) {
-    response.send(projectData);
+    function sendData (req, res) {
+    res.send(projectData);
     };
 
-    // POST route
-    app.post('/add', callBack);
-
-    function callBack(req,res){
-    res.send('POST received');
+    // GET DATA ARRAY FOR PRIOR ENTRIES
+    app.get('/allData', sendAllData);
+    function sendAllData (req, res) {
+    res.send(data);
     };
 
-    // POST Entry
+    // POST ENTRY
     const data = [];
-
     app.post('/addEntry', addEntry);
-
     function addEntry (req,res){
         data.push(req.body);
+        projectData = {
+            city: req.body.city,
+            country: req.body.country,
+            mapURL: req.body.mapURL,
+            date: req.body.date,
+            time: req.body.time,
+            temperature: req.body.temperature,
+            conditions: req.body.conditions,
+            wind: req.body.wind,
+            weatherIconURL: req.body.weatherIconURL,
+            mood: req.body.mood 
+        }
     };
 

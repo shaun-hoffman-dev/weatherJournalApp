@@ -21,3 +21,10 @@ Things to Know:
 * Currently limited to US Zip Code entry only
 * Currently limited to displaying Farenheit temperatures only
 
+External Tools and References:
+* Bootstrap for UI/Styling
+* Google Fonts for title font
+* FontAwesome for heading icon
+* Helper function for proper casing from https://stackoverflow.com/questions/196972/convert-string-to-title-case-with-javascript
+* Udacity course examples
+* Other Student Examples and Peer Chat

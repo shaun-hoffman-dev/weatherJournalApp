@@ -1,99 +1,114 @@
-.jumbotron {
-    background-color: #84d669;
-    text-align: center;
-    font-family: 'Fjalla One', sans-serif;
-    border-bottom: 1px solid #BBB;
-    font-size: .8em;
-}
+/* NOTE: WE ARE USING BOOTSTRAP FOR CORE LAYOUT */
 
-.display-4{
-    font-size: 2.5rem;
-}
+/* HEADING STYLES */
+    .jumbotron {
+        background-color: #84d669;
+        text-align: center;
+        font-family: 'Fjalla One', sans-serif;
+        border-bottom: 1px solid #BBB;
+        font-size: .8em;
+    }
 
-footer {
-    background-color: black;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-main-div {
-    text-align: center;
-}
-
-#submit-btn{
-    margin: auto;
-}
-
-#journal{
-    color: white;
-}
-
-i{
-    font-size: 4em;;
-}
-
-.hidden{
-    display: none;
-}
-
-.card-heading{
-    background-color: #0b5706;
-    color: white;
-    text-align: center;
-    margin: 0;
-    padding: .5rem;
-}
-
-.card-subheading{
-    background-color: #84d669;
-    text-align: center;
-    margin: 0;
-    padding: .5rem;
-}
-
-.card{
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.align-self-center{
-    text-align: center;
-}
-
-table{
-    width: inherit;
-}
-
-td{
-    margin: 2px 5px;
-    font-size: .9rem;
-}
-
-.gallery-card{
-    margin: 10px;
-}
-
-.gallery-card-table{
-    font-size: 1em;
-    padding: 0;
-}
-
-main{
-    margin-bottom: 72px;
-}
-
-a.nostyle:link,
-a.nostyle:visited {
-    color: inherit;
-}
-
-@media only screen and (min-width: 700px){
     .display-4{
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
+
+    i{
+        font-size: 4em;;
+    }
+
+    #journal{
+        color: white;
+    }
+
+/* MAIN OVERALL SECTION */
+    a.nostyle:link,
+    a.nostyle:visited {
+        color: inherit;
+    }
+
+    .card-heading{
+        background-color: #0b5706;
+        color: white;
+        text-align: center;
+        margin: 0;
+        padding: .5rem;
+    }
+
+    .card-subheading{
+        background-color: #84d669;
+        text-align: center;
+        margin: 0;
+        padding: .5rem;
+    }
+
+    main{
+        margin-bottom: 72px;
+    }
+
+    .card{
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+
+    .align-self-center{
+        text-align: center;
+}
+
+/* JOURNAL ENTRY SECTION */
+    #generate{
+        margin: auto;
+    }
+
+/* LATEST CONDITIONS SECTION */
+    .hidden{
+        display: none;
+    }
+
+    .gallery-card{
+        margin: 10px;
+    }
+
+    .gallery-card-table{
+        font-size: 1em;
+        padding: 0;
+    }
+
+/* PRIOR SECTION */
+    .journalIcon{
+        height: 80%;
+        width: 80%;
+    }
+
+/* FOOTER STYLES */
+    footer {
+        background-color: black;
+        color: white;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .footer-main-div {
+        text-align: center;
+    }
+
+/* TABLES */
+    table{
+        width: inherit;
+    }
+
     td{
-        font-size: 1rem;
+        margin: 2px 5px;
+        font-size: .9rem;
     }
-}   
+
+/* MEDIA QUERIES */
+    @media only screen and (min-width: 700px){
+        .display-4{
+            font-size: 3.5rem;
+        }
+        td{
+            font-size: 1rem;
+        }
+    }   
